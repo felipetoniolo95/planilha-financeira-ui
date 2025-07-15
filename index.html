@@ -18,7 +18,7 @@
     const comando = document.getElementById("comando").value;
 
     try {
-      const response = await fetch("https://fe9fcb7c-d549-4a0c-9bd1-e18f92f11498-00-1eshdzbi1dhoj.riker.replit.dev/atualizar", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwAgr7zW8NY-nPPoPYVKqhbebr3vYL-wute6-DyA9TAuaINmpm4cV5EJKSUgaUW0JRjTw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ comando: comando }),
