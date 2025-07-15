@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Bot Planilha Financeira</title>
+</head>
+<body>
+  <h2>Enviar comando para planilha</h2>
+  <form id="formulario">
+    <input type="text" id="comando" placeholder="Digite o comando (ex: x2 40)" required />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="resposta" style="margin-top: 20px;"></div>
+
+  <script>
+    const endpoint = "https://01k07e0qatpt8se47qy5awvepk.webrelay.io/atualizar"; // ou substitua pelo URL que você usa
+
+    document.getElementById("formulario").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const comando = document.getElementById("comando").value;
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ comando })
+        });
+        const data = await res.json();
+        document.getElementById("resposta").innerText = JSON.stringify(data);
+      } catch (err) {
+        document.getElementById("resposta").innerText = "Erro ao enviar: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
