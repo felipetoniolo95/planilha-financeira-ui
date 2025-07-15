@@ -18,11 +18,11 @@
     const comando = document.getElementById("comando").value;
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzmXlzRI1qzpG5q7bBbnEdrrHWjpCOZv6j19mEMQt_NjJxq2CLYKfG03RZ04csF9EvX7w/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ comando: comando }),
-      });
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxGAQu4qvvZBHnpCfbiZrbbSaZ2RthJ1nF6FXV_jHFsLPGJ7IANR0fP3R8alj0N4vHMwg/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ comando: "teste" }),
+    })
 
       const data = await response.json();
       resposta.innerText = "✅ " + JSON.stringify(data);
