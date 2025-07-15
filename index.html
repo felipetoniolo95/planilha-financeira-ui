@@ -18,7 +18,7 @@
     const comando = document.getElementById("comando").value;
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwAgr7zW8NY-nPPoPYVKqhbebr3vYL-wute6-DyA9TAuaINmpm4cV5EJKSUgaUW0JRjTw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzmXlzRI1qzpG5q7bBbnEdrrHWjpCOZv6j19mEMQt_NjJxq2CLYKfG03RZ04csF9EvX7w/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ comando: comando }),
